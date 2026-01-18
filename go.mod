@@ -1,0 +1,26 @@
+module github.com/srv-api/merchant
+
+go 1.24.4
+
+toolchain go1.24.12
+
+require (
+	github.com/google/uuid v1.6.0 // indirect
+	github.com/h2non/filetype v1.1.3 // indirect
+	github.com/labstack/echo/v4 v4.15.0 // indirect
+	github.com/labstack/gommon v0.4.2 // indirect
+	github.com/lib/pq v1.10.9 // indirect
+	github.com/mattn/go-colorable v0.1.14 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e // indirect
+	github.com/srv-api/util v0.0.0-20260118092709-27b0e77af41d // indirect
+	github.com/streadway/amqp v1.1.0 // indirect
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasttemplate v1.2.2 // indirect
+	golang.org/x/crypto v0.46.0 // indirect
+	golang.org/x/net v0.48.0 // indirect
+	golang.org/x/sys v0.39.0 // indirect
+	golang.org/x/text v0.32.0 // indirect
+	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
+	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df // indirect
+)
