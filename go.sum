@@ -133,8 +133,6 @@ github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e h1:MRM5ITcdelLK2j1
 github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e/go.mod h1:XV66xRDqSt+GTGFMVlhk3ULuV0y9ZmzeVGR4mloJI3M=
 github.com/spiffe/go-spiffe/v2 v2.6.0 h1:l+DolpxNWYgruGQVV0xsfeya3CsC7m8iBzDnMpsbLuo=
 github.com/spiffe/go-spiffe/v2 v2.6.0/go.mod h1:gm2SeUoMZEtpnzPNs2Csc0D/gX33k1xIx7lEzqblHEs=
-github.com/srv-api/auth v0.0.0-20260118094908-05d405c1917c h1:O0dApS5dJul2rMCastzHaPfjspDTd9s1lGcNugo3kcI=
-github.com/srv-api/auth v0.0.0-20260118094908-05d405c1917c/go.mod h1:m/GBfhDN40rfwAsyWpW6ife7q3cQIAl5AAO294kQ9Xo=
 github.com/srv-api/auth v0.0.0-20260118110236-988ac8498d98 h1:wqehpgIE2GtYGcnpehGrp8URZPNtDSBFcxY1cNzdvtA=
 github.com/srv-api/auth v0.0.0-20260118110236-988ac8498d98/go.mod h1:s60LubCrVHO82ztguhqq/Fi1OZgAhb27Ehq7XfDgN8A=
 github.com/srv-api/middlewares v0.0.0-20260118094353-3c21604ff12e h1:YrxdqVGmjDgR5VzHW2OJ1xVdq32Zpwe8vFng9TNoJOI=
