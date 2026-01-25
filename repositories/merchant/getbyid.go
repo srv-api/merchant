@@ -17,6 +17,7 @@ func (b *merchantRepository) GetById(req dto.GetByIdRequest) (*dto.GetMerchantRe
 	response := &dto.GetMerchantResponse{
 		ID:           tr.ID,
 		MerchantName: tr.MerchantName,
+		MerchantSlug: tr.MerchantSlug,
 		Description:  tr.Description,
 		Address:      tr.Address,
 		City:         tr.City,

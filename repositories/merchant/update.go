@@ -13,6 +13,7 @@ func (b *merchantRepository) Update(req dto.UpdateMerchantRequest) (dto.UpdateMe
 	request := entity.MerchantDetail{
 		ID:           tr.ID,
 		MerchantName: req.MerchantName,
+		MerchantSlug: req.MerchantSlug,
 		IDNumber:     req.IDNumber,
 		Description:  req.Description,
 		Address:      req.Address,
@@ -31,6 +32,7 @@ func (b *merchantRepository) Update(req dto.UpdateMerchantRequest) (dto.UpdateMe
 
 	err = b.DB.Where("ID = ?", req.ID).Updates(entity.MerchantDetail{
 		MerchantName: request.MerchantName,
+		MerchantSlug: request.MerchantSlug, // ✅ slug dari service
 		IDNumber:     request.IDNumber,
 		Description:  request.Description,
 		Address:      request.Address,
@@ -47,6 +49,7 @@ func (b *merchantRepository) Update(req dto.UpdateMerchantRequest) (dto.UpdateMe
 
 	response := dto.UpdateMerchantResponse{
 		MerchantName: request.MerchantName,
+		MerchantSlug: request.MerchantSlug,
 		IDNumber:     request.IDNumber,
 		Description:  request.Description,
 		Address:      request.Address,
