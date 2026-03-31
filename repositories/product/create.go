@@ -35,20 +35,14 @@ func (r *productRepository) Create(req dto.ProductRequest) (dto.ProductResponse,
 
 	// Create the new product entry
 	create := product.Product{
-		ID:           secureID,
-		SKU:          req.SKU,
-		Barcode:      req.Barcode,
-		ProductName:  req.ProductName,
-		Stock:        req.Stock,
-		MinimalStock: req.MinimalStock,
-		Price:        req.Price,
-		Status:       req.Status,
-		UserID:       req.UserID,
-		MerchantID:   req.MerchantID,
-		MerkID:       req.MerkID,
-		CategoryID:   req.CategoryID,
-		CreatedBy:    req.CreatedBy,
-		Description:  req.Description,
+		ID:          secureID,
+		ProductName: req.ProductName,
+		Price:       req.Price,
+		Status:      req.Status,
+		UserID:      req.UserID,
+		MerchantID:  req.MerchantID,
+		CreatedBy:   req.CreatedBy,
+		Description: req.Description,
 	}
 
 	// Save the new product to the database
@@ -74,20 +68,14 @@ func (r *productRepository) Create(req dto.ProductRequest) (dto.ProductResponse,
 
 	// Build the response for the created product
 	response := dto.ProductResponse{
-		ID:           create.ID,
-		UserID:       create.UserID,
-		SKU:          create.SKU,
-		MerchantID:   create.MerchantID,
-		Barcode:      req.Barcode,
-		MerkID:       req.MerkID,
-		CategoryID:   req.CategoryID,
-		ProductName:  create.ProductName,
-		Description:  create.Description,
-		Stock:        create.Stock,
-		MinimalStock: create.MinimalStock,
-		Price:        create.Price,
-		Status:       statusString,
-		CreatedBy:    create.CreatedBy,
+		ID:          create.ID,
+		UserID:      create.UserID,
+		MerchantID:  create.MerchantID,
+		ProductName: create.ProductName,
+		Description: create.Description,
+		Price:       create.Price,
+		Status:      statusString,
+		CreatedBy:   create.CreatedBy,
 	}
 
 	return response, nil

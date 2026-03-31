@@ -13,7 +13,7 @@ require (
 	github.com/srv-api/auth v0.0.0-20260118110236-988ac8498d98
 	github.com/srv-api/middlewares v0.0.0-20260118094353-3c21604ff12e
 	github.com/srv-api/pos v0.0.0-20260118100807-db80bf3152c2
-	github.com/srv-api/product v0.0.0-20260118103516-a88386a51e3d
+	github.com/srv-api/product v0.0.0-20260317020255-1aa49e1af5e5
 	github.com/srv-api/util v0.0.0-20260118105025-cdb334ac3c2f
 	github.com/xuri/excelize/v2 v2.10.0
 	golang.org/x/crypto v0.46.0

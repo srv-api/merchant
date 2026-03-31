@@ -8,19 +8,13 @@ import (
 func (b *productRepository) Update(req dto.ProductUpdateRequest) (dto.ProductUpdateResponse, error) {
 	// Menyiapkan struktur update untuk produk
 	updateProduct := entity.Product{
-		SKU:          req.SKU,
-		Barcode:      req.Barcode,
-		CategoryID:   req.CategoryID,
-		MerkID:       req.MerkID,
-		ProductName:  req.ProductName,
-		Stock:        req.Stock,
-		MinimalStock: req.MinimalStock,
-		Price:        req.Price,
-		Status:       req.Status,
-		UpdatedBy:    req.UpdatedBy,
-		UserID:       req.UserID,
-		Description:  req.Description,
-		MerchantID:   req.MerchantID,
+		ProductName: req.ProductName,
+		Price:       req.Price,
+		Status:      req.Status,
+		UpdatedBy:   req.UpdatedBy,
+		UserID:      req.UserID,
+		Description: req.Description,
+		MerchantID:  req.MerchantID,
 	}
 
 	// Cek apakah produk ada terlebih dahulu
@@ -38,19 +32,13 @@ func (b *productRepository) Update(req dto.ProductUpdateRequest) (dto.ProductUpd
 
 	// Menyiapkan response setelah pembaruan berhasil
 	response := dto.ProductUpdateResponse{
-		SKU:          updateProduct.SKU,
-		Barcode:      updateProduct.Barcode,
-		CategoryID:   updateProduct.CategoryID,
-		MerkID:       updateProduct.MerkID,
-		ProductName:  updateProduct.ProductName,
-		Stock:        updateProduct.Stock,
-		MinimalStock: updateProduct.MinimalStock,
-		Price:        updateProduct.Price,
-		Status:       updateProduct.Status,
-		UpdatedBy:    updateProduct.UpdatedBy,
-		UserID:       updateProduct.UserID,
-		MerchantID:   updateProduct.MerchantID,
-		Description:  updateProduct.Description,
+		ProductName: updateProduct.ProductName,
+		Price:       updateProduct.Price,
+		Status:      updateProduct.Status,
+		UpdatedBy:   updateProduct.UpdatedBy,
+		UserID:      updateProduct.UserID,
+		MerchantID:  updateProduct.MerchantID,
+		Description: updateProduct.Description,
 	}
 
 	return response, nil

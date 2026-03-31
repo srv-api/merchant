@@ -6,20 +6,14 @@ import (
 )
 
 type ProductRequest struct {
-	ID           string `json:"id"`
-	SKU          uint64 `json:"sku"`
-	UserID       string `json:"user_id"`
-	Barcode      string `json:"barcode"`
-	MerchantID   string `json:"merchant_id"`
-	MerkID       string `json:"merk_id"`
-	CategoryID   string `json:"category_id"`
-	ProductName  string `json:"product_name"`
-	Description  string `json:"description"`
-	Stock        int    `json:"stock"`
-	MinimalStock int    `json:"minimal_stock"`
-	Price        int    `json:"price"`
-	Status       int    `json:"status"`
-	CreatedBy    string `json:"created_by"`
+	ID          string `json:"id"`
+	UserID      string `json:"user_id"`
+	MerchantID  string `json:"merchant_id"`
+	ProductName string `json:"product_name"`
+	Description string `json:"description"`
+	Price       int    `json:"price"`
+	Status      int    `json:"status"`
+	CreatedBy   string `json:"created_by"`
 }
 
 type BulkEditAvail struct {
@@ -39,21 +33,15 @@ type BulkEditAvail struct {
 }
 
 type ProductResponse struct {
-	ID           string    `json:"id"`
-	SKU          uint64    `json:"sku"`
-	UserID       string    `json:"user_id"`
-	MerchantID   string    `json:"merchant_id"`
-	Barcode      string    `json:"barcode"`
-	MerkID       string    `json:"merk_id"`
-	CategoryID   string    `json:"category_id"`
-	ProductName  string    `json:"product_name"`
-	Description  string    `json:"description"`
-	Stock        int       `json:"stock"`
-	MinimalStock int       `json:"minimal_stock"`
-	Price        int       `json:"price"`
-	Status       string    `json:"status"`
-	CreatedBy    string    `json:"created_by"`
-	CreatedAt    Timestamp `json:"created_at"`
+	ID          string    `json:"id"`
+	UserID      string    `json:"user_id"`
+	MerchantID  string    `json:"merchant_id"`
+	ProductName string    `json:"product_name"`
+	Description string    `json:"description"`
+	Price       int       `json:"price"`
+	Status      string    `json:"status"`
+	CreatedBy   string    `json:"created_by"`
+	CreatedAt   Timestamp `json:"created_at"`
 }
 
 type ProductGetByIdRequest struct {
@@ -82,20 +70,14 @@ type ProductBulkDeleteResponse struct {
 }
 
 type ProductUpdateRequest struct {
-	ID           string `json:"id"`
-	Barcode      string `json:"barcode"`
-	MerkID       string `json:"merk_id"`
-	CategoryID   string `json:"category_id"`
-	SKU          uint64 `json:"sku"`
-	ProductName  string `json:"product_name"`
-	Stock        int    `json:"stock"`
-	MinimalStock int    `json:"minimal_stock"`
-	Price        int    `json:"price"`
-	Status       int    `json:"status"`
-	UpdatedBy    string `json:"updated_by"`
-	UserID       string `json:"user_id"`
-	MerchantID   string `json:"merchant_id"`
-	Description  string `json:"description"`
+	ID          string `json:"id"`
+	ProductName string `json:"product_name"`
+	Price       int    `json:"price"`
+	Status      int    `json:"status"`
+	UpdatedBy   string `json:"updated_by"`
+	UserID      string `json:"user_id"`
+	MerchantID  string `json:"merchant_id"`
+	Description string `json:"description"`
 }
 
 type ProductUploadRequest struct {
@@ -123,20 +105,14 @@ type GetProductUploadResponse struct {
 }
 
 type ProductUpdateResponse struct {
-	ID           string `json:"id"`
-	SKU          uint64 `json:"sku"`
-	Barcode      string `json:"barcode"`
-	ProductName  string `json:"product_name"`
-	MerkID       string `json:"merk_id"`
-	CategoryID   string `json:"category_id"`
-	Stock        int    `json:"stock"`
-	MinimalStock int    `json:"minimal_stock"`
-	Price        int    `json:"price"`
-	Status       int    `json:"status"`
-	UpdatedBy    string `json:"updated_by"`
-	UserID       string `json:"user_id"`
-	MerchantID   string `json:"merchant_id"`
-	Description  string `json:"description"`
+	ID          string `json:"id"`
+	ProductName string `json:"product_name"`
+	Price       int    `json:"price"`
+	Status      int    `json:"status"`
+	UpdatedBy   string `json:"updated_by"`
+	UserID      string `json:"user_id"`
+	MerchantID  string `json:"merchant_id"`
+	Description string `json:"description"`
 }
 
 // Formatter untuk timestamp dengan nama bulan

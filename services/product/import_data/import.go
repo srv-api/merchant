@@ -52,8 +52,6 @@ func (s *importService) ImportProducts(ctx context.Context, fileHeader *multipar
 
 		barcode := row[0]
 		sku := parseUint(row[1])
-		merkID := row[2]
-		categoryID := row[3]
 		productName := row[4]
 		stock, _ := strconv.Atoi(row[5])
 		minStock, _ := strconv.Atoi(row[6])
@@ -75,8 +73,6 @@ func (s *importService) ImportProducts(ctx context.Context, fileHeader *multipar
 			UserID:       userID,
 			Barcode:      barcode,
 			SKU:          sku,
-			MerkID:       merkID,
-			CategoryID:   categoryID,
 			ProductName:  productName,
 			Stock:        stock,
 			MinimalStock: minStock,

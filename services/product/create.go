@@ -27,19 +27,13 @@ func (s *productService) Create(req dto.ProductRequest) (dto.ProductResponse, er
 	}
 
 	create := dto.ProductRequest{
-		Barcode:      req.Barcode,
-		SKU:          req.SKU,
-		ProductName:  req.ProductName,
-		Description:  req.Description,
-		Stock:        req.Stock,
-		MinimalStock: req.MinimalStock,
-		Price:        req.Price,
-		Status:       req.Status,
-		CategoryID:   req.CategoryID,
-		MerkID:       req.MerkID,
-		UserID:       req.UserID,
-		MerchantID:   req.MerchantID,
-		CreatedBy:    req.CreatedBy,
+		ProductName: req.ProductName,
+		Description: req.Description,
+		Price:       req.Price,
+		Status:      req.Status,
+		UserID:      req.UserID,
+		MerchantID:  req.MerchantID,
+		CreatedBy:   req.CreatedBy,
 	}
 
 	created, err := s.Repo.Create(create)
@@ -59,20 +53,14 @@ func (s *productService) Create(req dto.ProductRequest) (dto.ProductResponse, er
 	}
 
 	response := dto.ProductResponse{
-		ID:           created.ID,
-		UserID:       created.UserID,
-		SKU:          created.SKU,
-		Barcode:      req.Barcode,
-		ProductName:  created.ProductName,
-		Description:  created.Description,
-		Stock:        created.Stock,
-		MinimalStock: created.MinimalStock,
-		Price:        created.Price,
-		Status:       statusString,
-		CategoryID:   req.CategoryID,
-		MerkID:       req.MerkID,
-		MerchantID:   created.MerchantID,
-		CreatedBy:    created.CreatedBy,
+		ID:          created.ID,
+		UserID:      created.UserID,
+		ProductName: created.ProductName,
+		Description: created.Description,
+		Price:       created.Price,
+		Status:      statusString,
+		MerchantID:  created.MerchantID,
+		CreatedBy:   created.CreatedBy,
 	}
 
 	return response, nil

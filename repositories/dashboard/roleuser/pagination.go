@@ -14,27 +14,25 @@ func (r *RoleUserRepository) Pagination(req *dto.Pagination) (RepositoryResult, 
 
 	offset := (req.Page - 1) * req.Limit
 
+	// Perbaikan: Gunakan kolom yang benar dari masing-masing tabel
 	find := r.DB.Table("role_users AS ru").
 		Select(`
 			ru.id,
-
-			roles.id AS role_id,
+			ru.role_id,
+			ru.user_id,
+			ru.merchant_id,
+			ru.created_by,
+			ru.permission_id,
 			roles.role AS role_name,
-
 			permissions.id AS permission_id,
 			permissions.label AS permission_label,
 			permissions.icon AS permission_icon,
 			permissions.to AS permission_to,
-
-			access_doors.id AS user_id,
-			access_doors.full_name AS user_full_name,
-
-			ru.merchant_id,
-			ru.created_by
+			access_doors.full_name AS user_full_name
 		`).
-		Joins("JOIN roles ON roles.id = ru.role_id").
-		Joins("JOIN permissions ON permissions.id = ru.permission_id").
-		Joins("JOIN access_doors ON access_doors.id::varchar = ru.user_id").
+		Joins("LEFT JOIN roles ON roles.id = ru.role_id"). // Ubah dari roles.role_id menjadi roles.id
+		Joins("LEFT JOIN permissions ON permissions.id = ru.permission_id").
+		Joins("LEFT JOIN access_doors ON access_doors.user_id = ru.user_id").
 		Limit(req.Limit).
 		Offset(offset)
 
@@ -61,12 +59,13 @@ func (r *RoleUserRepository) Pagination(req *dto.Pagination) (RepositoryResult, 
 
 	req.Rows = roleusers
 
-	// COUNT (harus sama dengan JOIN atas)
-	if err := r.DB.Table("role_users AS ru").
-		Joins("JOIN roles ON roles.id = ru.role_id").
-		Joins("JOIN permissions ON permissions.id = ru.permission_id").
-		Joins("JOIN access_doors ON access_doors.id::varchar = ru.user_id").
-		Count(&totalRows).Error; err != nil {
+	// COUNT query
+	countQuery := r.DB.Table("role_users AS ru").
+		Joins("LEFT JOIN roles ON roles.id = ru.role_id").
+		Joins("LEFT JOIN permissions ON permissions.id = ru.permission_id").
+		Joins("LEFT JOIN access_doors ON access_doors.user_id = ru.user_id")
+
+	if err := countQuery.Count(&totalRows).Error; err != nil {
 		return RepositoryResult{Error: err}, 0
 	}
 
